@@ -1,0 +1,223 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap-reboot";
+@import './../../styles/var';
+@import './../../styles/mixins';
+
+.menu-item {
+  margin-left: 65px;
+  color: rgba(54, 54, 54, 1);
+  @include media-breakpoint-down(lg) {
+    margin-left: 30px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-left: 15px;
+    font-size: 13px;
+  }
+}
+
+.navbar-brand {
+  svg {
+    @include media-breakpoint-down(md) {
+      max-width: 160px;
+    }
+  }
+}
+
+.sub-header {
+  background-image: linear-gradient(90deg, #F9989C 0%, #FBB0B5 100%);
+  padding: 14px 0;
+  &-item {
+    color: $white !important;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    margin-right: 47px;
+    @include media-breakpoint-down(lg) {
+      margin-right: 25px;
+    }
+    @include media-breakpoint-down(md) {
+      margin-right: 20px;
+      font-size: 16px;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 14px 20px !important;
+      font-size: 14px;
+      &.active {
+        background: #FBB0B5;
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .navbar-collapse {
+      background-image: linear-gradient(90deg, #F9989C 0%, #FBB0B5 100%);
+      position: fixed;
+      height: 100vh;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      width: 266px;
+      left: -266px;
+      overflow: hidden;
+      z-index: 1100;
+      transition: all 1s;
+      padding: 31px 0;
+      &.show {
+        left: 0;
+      }
+      .navbar-nav {
+        order: 2;
+        width: 100%;
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .container {
+      padding: 0 15px;
+    }
+  }
+}
+
+.header-notification-btn {
+  margin-left: 45px;
+  .dropdown-toggle {
+    padding: 0 !important;
+    &::after {
+      font-family: 'fontello';
+      content: '\e804';
+      border: none;
+      color: $white;
+      font-size: 34px;
+      @include media-breakpoint-down(md) {
+        font-size: 28px;
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .dropdown-menu {
+      position: fixed;
+      top: 45px !important;
+      z-index: 1100;
+      width: 312px;
+      max-width: 95%;
+    }
+  }
+  &::before {
+    @include border-radius(50%);
+    @include size(14px);
+    content: attr(data-count);
+    position: absolute;
+    right: -3px;
+    top: 3px;
+    background: $white;
+    color: #F9989C;
+    border: 1px solid #977575;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dropdown-menu {
+    @include size(375px, 622px);
+    @include border-radius(30px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    padding: 34px 10px 20px;
+    border: none;
+    right: 50%;
+    left: auto;
+    top: 150%;
+    transform: translateX(50%);
+    .close {
+      color: #C4C4C4;
+      opacity: 1;
+      font-size: 20px;
+      top: 14px;
+      right: 34px;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    margin-left: 20px;
+  }
+}
+
+.like-icon {
+  color: $white !important;
+  font-size: 34px;
+  margin: 0 40px 0 35px;
+  @include media-breakpoint-down(lg) {
+    margin: 0 20px 0 15px;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: 24px;
+  }
+}
+
+.header-profile {
+  @include size(58px);
+  @include border-radius(50%);
+  @include imageSize(cover, center);
+  border: 2px solid $white;
+  @include media-breakpoint-down(md) {
+    @include size(45px);
+  }
+  @include media-breakpoint-down(xs) {
+    @include size(37px);
+  }
+}
+
+.search {
+  &-input {
+    border: 2px solid $white;
+    padding: 5px 10px 5px 30px;
+    &:focus {
+      border-color: $white;
+    }
+  }
+  &-btn {
+    left: 0;
+    color: $white;
+    font-size: 18px;
+    &:hover,
+    &:focus {
+      color: inherit;
+    }
+    @include media-breakpoint-down(sm) {
+      left: 15px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    order: 1;
+    padding: 0 15px;
+    width: 100%;
+    margin-bottom: 18px;
+    flex-grow: 0 !important;
+  }
+}
+
+.navbar-toggler {
+  @include size(38px, 16px);
+  position: relative;
+  &::after,
+  &::before {
+    content: '';
+    @include size(100%, auto);
+    @include border-radius(5px);
+    border-top: 2px solid $white;
+    position: absolute;
+    left: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+  &::before {
+    top: 0;
+  }
+  .navbar-toggler-icon {
+    background-image: none;
+    @include size(100%, auto);
+    @include border-radius(5px);
+    border-top: 2px solid $white;
+    position: absolute;
+    top: 50%;
+    left:0;
+    transform: translateY(-50%);
+  }
+}

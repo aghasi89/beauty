@@ -1,0 +1,9 @@
+@mixin imageSize($size, $pozition) {
+  object-fit: $size;
+  object-position: $pozition;
+}
+
+@mixin size($width, $height:$width) {
+  width: $width;
+  height: $height;
+}

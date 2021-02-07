@@ -1,0 +1,32 @@
+@import "../../../../node_modules/bootstrap/scss/bootstrap-reboot";
+@import './../../../styles/var';
+@import './../../../styles/mixins';
+
+.notification-item {
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 1;
+  &-content {
+    margin: 0 9px;
+    &-time {
+      margin-left: 16px;
+    }
+  }
+  &-image {
+    @include size(32px);
+    > img {
+      @include imageSize(cover, center)
+    }
+  }
+  &-user-name {
+    color: #464646;
+    font-weight: 500;
+    margin-bottom: 5px;
+    &:hover {
+      color: #464646;
+    }
+  }
+  &-info {
+    color: #A4A4A4
+  }
+}

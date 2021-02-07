@@ -1,0 +1,62 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap-reboot";
+@import './../../styles/mixins';
+
+.title {
+  color: #977575;
+  font-size: 24px;
+  font-weight: 500;
+  margin:70px 0 55px;
+  @include media-breakpoint-down(sm){
+    font-size: 14px;
+    margin:27px 0;
+  }
+}
+
+.items-list {
+  display: grid;
+  grid-template-columns: repeat(6, calc((100% - 20px * 5) / 6));
+  grid-gap: 20px;
+  @include media-breakpoint-down(sm){
+    grid-template-columns: repeat(3, calc((100% - 20px * 2) / 3));
+  }
+}
+
+.image-container {
+  @include border-radius(10px);
+  padding-top: 100%;
+  img {
+    @include imageSize(cover, center);
+    top: 0;
+    left: 0;
+  }
+}
+
+.text {
+  font-size: 14px;
+  color: #747474;
+  margin-top: 9px;
+  @include media-breakpoint-down(sm){
+   text-align: center;
+    font-size: 12px;
+  }
+}
+
+.add-btn {
+  @include border-radius(10px);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.17);
+  background: $white;
+  color: #E2878B;
+  padding-top: 100%;
+  .icon-plus {
+    top: 0;
+    left: 0;
+    font-size: 38px;
+  }
+  &:hover,
+  &:focus {
+    color: #E2878B;
+  }
+  &:focus {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.17);
+  }
+}
